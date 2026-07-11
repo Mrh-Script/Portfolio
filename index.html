@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Riad Hasan | Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        /* গ্লোবাল ডার্ক ও রেডিয়াল ব্যাকগ্রাউন্ড */
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+        }
+
+        /* প্রফেশনাল গ্লাসি ভাইব (Glassmorphism) */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.55) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* হোভার ইফেক্ট */
+        .glass-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.2);
+        }
+
+        /* ইমেজের চারপাশে ঘূর্ণায়মান প্রিমিয়াম লাইট গ্লো */
+        .image-glow-wrapper {
+            position: relative;
+            padding: 4px;
+            background: linear-gradient(135deg, #3b82f6, #6366f1, #a855f7);
+            border-radius: 50%;
+            box-shadow: 0 0 35px -5px rgba(59, 130, 246, 0.4);
+        }
+
+        /* অন-পেইজ সার্টিফিকেট ড্রপডাউন অ্যানিমেশন */
+        .cert-dropdown {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin-top 0.4s ease;
+        }
+        .cert-dropdown.open {
+            max-height: 800px; /* ইমেজের হাইট অনুযায়ী স্মুথলি খুলবে */
+            opacity: 1;
+            margin-top: 1.25rem;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-200 font-sans antialiased selection:bg-blue-500 selection:text-white">
+
+    <nav class="fixed top-0 w-full bg-[#0b0f19]/80 backdrop-blur-md z-50 border-b border-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold bg-gradient-to-r flex items-center gap-2 from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                <i class="fa-solid fa-code text-blue-400"></i> Home
+            </a>
+            <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#education" class="hover:text-blue-400 transition-colors">Education</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#research" class="hover:text-blue-400 transition-colors">Research</a>
+                <a href="#achievements" class="hover:text-blue-400 transition-colors">Achievements</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden flex gap-4 text-slate-400 text-sm">
+                <a href="#skills" class="hover:text-blue-400">Skills</a>
+                <a href="#projects" class="hover:text-blue-400">Projects</a>
+                <a href="#contact" class="hover:text-blue-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="relative min-h-screen flex items-center justify-center pt-24 md:pt-16 hero-gradient overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                
+                <div class="flex-1 text-center md:text-left">
+                    <span class="px-3 py-1 text-xs font-semibold text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20 tracking-wider">Computer Science & Engineering Student</span>
+                    <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Hi, I'm <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Md. Riad Hasan</span>
+                    </h1>
+                    <p class="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed text-justify md:text-left">
+                        A high-performing CSE student, Published IEEE Researcher. Specialized in Web Technologies, DSA, ML/AI, Data Science and Algorithmic Engineering.
+                    </p>
+                    <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+
+                        <a href="assets/CV_Md_Riad_Hasan.pdf" target="_blank" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-all shadow-lg shadow-blue-500/20 flex items-center gap-2">
+                            View Resume
+                        </a>
+
+                        <a href="#contact" target="_blank" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-slate-200 font-medium rounded-lg transition-all border border-slate-800">
+                            Get In Touch
+                        </a>
+
+                        <a href="#projects" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-slate-200 font-medium rounded-lg transition-all border border-slate-800">
+                            View Projects <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+  
+
+                    </div>
+                </div>
+
+             <div class="w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 flex-shrink-0">
+                <div class="relative inline-block">
+
+                    <div class="image-glow-wrapper">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-slate-950 aspect-square">
+                            <img src="assets/Mrh1.jpg"
+                                alt="Md. Riad Hasan"
+                                class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Signature -->
+                    <img src="assets/sig.png"
+                        alt="Signature"
+                        class="absolute -bottom left-1/2 -translate-x-1/2
+                            w-32 sm:w-36 lg:w-40
+                            drop-shadow-xl z-20 pointer-events-none">
+
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+<section id="education" class="py-24 border-t border-slate-900 bg-[#080c14]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+            <i class="fa-solid fa-graduation-cap text-blue-400"></i>
+            Education & Credentials
+        </h2>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+            <!-- ================= B.Sc ================= -->
+            <div class="p-6 glass-card rounded-xl flex flex-col justify-between relative">
+
+                <div>
+                    <span class="absolute top-4 right-4 px-2 py-0.5 text-xs bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded font-semibold">
+                        Dean's Award Winner
+                    </span>
+
+                    <h3 class="text-lg font-bold text-slate-200 mt-2"><br>
+                        B.Sc in Computer Science & Engineering
+                    </h3>
+
+                    <p class="text-sm text-blue-400 mt-1">
+                        Uttara University | 8th Semester
+                    </p>
+
+                    <p class="text-xs text-slate-400 mt-4 leading-relaxed">
+                        Honored with the prestigious Dean's Academic Award for outstanding academic excellence with a perfect CGPA of 4.00/4.00.
+                    </p>
+                </div>
+
+                <div class="mt-6 pt-3 border-t border-slate-900">
+                    <button onclick="toggleCert('deans-drop', this)"
+                        class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1.5 transition-colors cursor-pointer">
+
+                        <i class="fa-solid fa-medal"></i>
+
+                        <span>View Dean's Award</span>
+
+                        <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+
+                    </button>
+                </div>
+
+                <div id="deans-drop" class="cert-dropdown w-full">
+
+                    <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+
+                        <img
+                            src="assets/DeansAward.png"
+                            alt="Dean's Award"
+                            class="w-full h-auto rounded object-contain max-h-96">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= HSC ================= -->
+
+            <div class="p-6 glass-card rounded-xl relative">
+
+                <span class="absolute top-4 right-4 px-2 py-0.5 text-xs bg-emerald-500/10 text-emerald-400 rounded">
+                    GPA : 5.00
+                </span>
+
+                <h3 class="text-lg font-bold text-slate-200"><br>
+                    Higher Secondary Certificate (HSC)
+                </h3>
+
+                <p class="text-sm text-blue-400 mt-1">
+                    Dhaka College
+                </p>
+
+                <p class="text-sm text-slate-400 mt-1">
+                    Dhaka Education Board
+                </p>
+
+                <p class="text-xs text-slate-500 mt-4 leading-relaxed">
+                    Passed in 2021 with GPA 5.00, demonstrating consistent academic excellence in Science.
+                </p>
+
+            </div>
+
+            <!-- ================= SSC ================= -->
+
+            <div class="p-6 glass-card rounded-xl relative">
+
+                <span class="absolute top-4 right-4 px-2 py-0.5 text-xs bg-emerald-500/10 text-emerald-400 rounded">
+                    GPA : 5.00
+                </span>
+
+                <h3 class="text-lg font-bold text-slate-200"><br>
+                    Secondary School Certificate (SSC)
+                </h3>
+
+                <p class="text-sm text-blue-400 mt-1">
+                    Akkelpur F.U. Pilot High School
+                </p>
+
+                <p class="text-sm text-slate-400 mt-1">
+                    Rajshahi Education Board
+                </p>
+
+                <p class="text-xs text-slate-500 mt-4 leading-relaxed">
+                    Graduated in 2019 with GPA 5.00, achieving outstanding academic performance.
+                </p>
+
+            </div>
+
+            <!-- ================= Diploma ================= -->
+
+            <div class="p-6 glass-card rounded-xl flex flex-col justify-between relative">
+                <div>
+                    <span class="absolute top-4 right-4 px-2 py-0.5 text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded font-semibold">
+                        Grade : A+
+                    </span>
+                    <h3 class="text-lg font-bold text-slate-200 mt-2"><br>
+                        Diploma in Computer Science & ICT
+                    </h3>
+                    <p class="text-sm text-blue-400 mt-1">
+                        Asian Institute of Multimedia Technology
+                    </p>
+                    <p class="text-xs text-slate-400 mt-4 leading-relaxed">
+                        Successfully completed the diploma program in 2018 with 80% marks (Grade A+), strengthening practical knowledge in Computer Science and ICT.
+                    </p>
+                </div>
+                <div class="mt-6 pt-3 border-t border-slate-900">
+                    <button onclick="toggleCert('diploma-drop', this)"
+                        class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>View Credential</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                    </button>
+                </div>
+                <div id="diploma-drop" class="cert-dropdown w-full">
+                    <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                        <img
+                            src="assets/Diploma.png"
+                            alt="Diploma Certificate"
+                            class="w-full h-auto rounded object-contain max-h-96">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!--Expertise & Core Coursework-->
+    
+    <section id="skills" class="py-24 bg-[#0b0f19] border-t border-slate-900">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Expertise & Core Coursework</h2>
+                <p class="text-sm text-slate-400 mt-2">Professional competencies engineered through rigorous university academic modules and research pipelines.</p>
+            </div>
+
+            <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="p-5 glass-card rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 shadow-sm">
+                        <i class="fa-solid fa-cubes text-lg"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Development Paradigms</h3>
+                    <div class="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Structured (C / C++)</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">OOP (C# / Java)</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Python</span>
+                    </div>
+                </div>
+
+                <div class="p-5 glass-card rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 shadow-sm">
+                        <i class="fa-solid fa-earth-americas text-lg"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Web Technologies</h3>
+                    <div class="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">HTML5 / CSS3</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">JavaScript (ES6)</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Backend (PHP)</span>
+                    </div>
+                </div>
+
+                <div class="p-5 glass-card rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4 shadow-sm">
+                        <i class="fa-solid fa-brain text-lg"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Intelligent Systems</h3>
+                    <div class="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Machine Learning</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Artificial Intelligence</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Data Analytics (Statistics)</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Calculus & Linear Algebra</span>
+                    </div>
+                </div>
+
+                <div class="p-5 glass-card rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4 shadow-sm">
+                        <i class="fa-solid fa-code-branch text-lg"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Core Infrastructure</h3>
+                    <div class="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">DSA (C++ / C# / Java / Python)</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">DBMS (MySQL)</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Operating Systems (Linux - Ubuntu)</span>
+                    </div>
+                </div>
+
+                <div class="p-5 glass-card rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-4 shadow-sm">
+                        <i class="fa-solid fa-microchip text-lg"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Hardware Systems</h3>
+                    <div class="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Circuits & Electronics</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Microprocessors</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Digital Logic Design (DLD)</span>
+                    </div>
+                </div>
+
+                <div class="p-5 glass-card rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-4 shadow-sm">
+                        <i class="fa-solid fa-shield-halved text-lg"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Security & Networks</h3>
+                    <div class="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Cybersecurity Basics</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Data Communication</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Computer Networking</span>
+                    </div>
+                </div>
+
+                <div class="p-5 glass-card rounded-xl">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4 shadow-sm">
+                        <i class="fa-solid fa-graduation-cap text-lg"></i>
+                    </div>
+
+                    <h3 class="text-base font-bold text-white">Other Coursework</h3>
+
+                    <div class="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Engineering Economics</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Professional Ethics</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Entrepreneurship</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Engineering Mathematics</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded">Bangladesh History & Culture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Research & Publications -->
+
+<section id="research" class="py-24 bg-[#080c14] border-t border-slate-900">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Heading -->
+        <div class="text-center">
+            <span class="px-2.5 py-1 text-xs font-semibold text-emerald-400 bg-emerald-500/10 rounded-full border border-emerald-500/20">
+                IEEE Xplore Published
+            </span>
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-3">
+                Research & Publications
+            </h2>
+        </div>
+
+        <!-- ================= Research Card ================= -->
+        <div class="mt-12 p-6 sm:p-8 glass-card rounded-2xl shadow-2xl flex flex-col md:flex-row gap-8 items-center">
+
+            <!-- Left Side -->
+            <div class="w-full md:w-2/5">
+                <div class="aspect-video w-full bg-[#070a13] rounded-xl border border-slate-900 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden shadow-inner">
+
+                    <div class="absolute -inset-10 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 rounded-full blur-2xl opacity-70"></div>
+
+                    <div class="relative z-10">
+                        <div class="text-4xl font-black tracking-tighter text-blue-500 font-sans mb-1 select-none drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                            IEEE
+                        </div>
+
+                        <div class="h-[2px] w-12 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto my-2 rounded-full"></div>
+
+                        <span class="text-xs text-slate-300 font-medium tracking-wide block">
+                            ICCIT 2025 Presentation Proof
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex-1 w-full">
+
+                <h3 class="text-xl font-bold text-white">
+                    Reinforcement Learning for Optimizing Bowling Strategies in One Day Internationals
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Presented at ICCIT 2025 |
+                    Published in <strong>IEEE Xplore</strong>
+                </p>
+
+                <p class="mt-4 text-sm text-slate-400 leading-relaxed text-justify">
+                    An advanced machine learning framework using Deep Q-Networks (DQN) to optimize
+                    cricket delivery variants in real-time matchups, achieving a 72% wicket prediction
+                    accuracy (a 25% increase over traditional base statistics).
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-4 items-center">
+
+                    <a href="https://ieeexplore.ieee.org/document/11490554"
+                        target="_blank"
+                        class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-xs font-semibold rounded-md flex items-center gap-1.5 transition-colors">
+                        <i class="fa-solid fa-bookmark"></i>
+                        Read Paper on IEEE Xplore
+                    </a>
+
+                    <button onclick="toggleCert('research-drop', this)"
+                        class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs text-slate-300 font-semibold rounded-md flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+
+                        <i class="fa-solid fa-file-invoice"></i>
+
+                        <span>View Presentation Certificate</span>
+
+                        <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+
+                    </button>
+
+                </div>
+
+                <!-- Dropdown -->
+                <div id="research-drop" class="cert-dropdown w-full">
+                    <div class="p-3 bg-slate-950/60 border border-slate-900 rounded-xl shadow-2xl">
+                        <img src="assets/research1.png"
+                            alt="Presentation Certificate"
+                            class="w-full h-auto rounded-lg object-contain max-h-[500px] mx-auto">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= Book Card ================= -->
+        <div class="mt-8 p-6 sm:p-8 glass-card rounded-2xl shadow-2xl flex flex-col md:flex-row gap-8 items-center">
+
+            <!-- Book Cover -->
+            <div class="w-full md:w-2/5">
+                <div class="w-full flex justify-center">
+                    <img src="assets/bookCover.png"
+                        alt="Book Cover"
+                        class="w-52 sm:w-60 rounded-xl border border-slate-800 shadow-xl hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+
+            <!-- Book Details -->
+            <div class="flex-1 w-full">
+
+                <span class="px-2.5 py-1 text-xs font-semibold text-amber-400 bg-amber-500/10 rounded-full border border-amber-500/20">
+                    Book
+                </span>
+
+                <h3 class="text-xl font-bold text-white mt-4">
+                    চলো নামাজ শিখি
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Author:
+                    <strong>Md. Riad Hasan</strong>
+                </p>
+
+                <p class="mt-4 text-sm text-slate-400 leading-relaxed text-justify">
+                    A beginner-friendly Islamic book written in Bengali to help readers learn
+                    Salah (Namaz) correctly. The book explains the complete prayer procedure,
+                    Arabic recitations, Bengali pronunciation, and meanings in a simple and
+                    easy-to-understand manner.
+                </p>
+
+                <div class="mt-6">
+                    <a href="assets/চলো নামাজ শিখি - মোঃ রিয়াদ হাসান.pdf"
+                        target="_blank"
+                        class="inline-flex w-fit px-4 py-2 bg-blue-600 hover:bg-blue-500 text-xs font-semibold rounded-md items-center gap-1.5 transition-colors">
+
+                        <i class="fa-solid fa-book-open"></i>
+                        Read Book
+
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+   <!--Achievements Section-->
+
+    <section id="achievements" class="py-24 border-t border-slate-900 bg-[#0b0f19]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                <i class="fa-solid fa-award text-amber-400"></i> Certifications & Tech Activities
+            </h2>
+            
+            <!-- গ্রিড লেআউট আগের মতোই আছে -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- কার্ড 1 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">CodeSphere 2026</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-rose-500/10 text-rose-400 rounded-full shrink-0 font-mono">UU Computer Programming Club</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Intra University Programming Contest</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                            CodeSphere 2026 (Intra University Programming Contest) was organized by the Uttara University Computer Programming Club in 2026. I participated with my team <strong>Metaphorical 3.O</strong> as the <strong>Vice Team Leader</strong>. Our team secured the <strong>1st Runner-Up</strong> position, demonstrating teamwork, problem-solving, and competitive programming skills.
+                        </p>
+                    </div>
+
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('codesphere-award-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View Credential</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="codesphere-award-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/runner up.jpg" alt="IUPC 2026 Credential" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+
+
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('codesphere-participation-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View Participation Certificate</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="codesphere-participation-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/iupc2.png" alt="IUPC 2026 Certificate" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- কার্ড 2 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">National Undergraduate Mathematics Olympiad</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-blue-500/10 text-blue-400 rounded-full shrink-0 font-mono">November 2025</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Bangladesh Mathematical Society - AF Mujibur Rahman Foundation</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                           Participated in the 16th National Undergraduate Mathematics Olympiad 2025, gaining valuable exposure to competitive mathematical problem-solving and earning a Participation Certificate.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('math-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View Olympiad Certificate</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="math-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/mathOlym.png" alt="Mathematics Olympiad" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- কার্ড 3 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">Craft effective prompts for Microsoft 365 Copilot</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-blue-500/10 text-blue-400 rounded-full shrink-0 font-mono">June 2025</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Microsoft AI Learn | Tech Credential Portfolio</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                            Certified by NetCom Learning® under Satya Nadella's endorsement. Enriched structural workflow strategies within enterprise systems and unlocked Phase 1 achievement in AgentX AI Prompting Competition.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('copilot-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View Copilot Certificate</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="copilot-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/copilot.png" alt="Microsoft Copilot Certificate" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- কার্ড 4 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">ICPC Dhaka Regional Preliminary</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-amber-500/10 text-amber-400 rounded-full shrink-0 font-mono">2025 Round</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Competitive Programming | League Session</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                            Participated alongside Team Metaphorical_3.0 at the regional preliminary computational league hosted at UU Computer Programming Club. Engineered robust data logic solutions under strict sandbox timeframes.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('icpc-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-image"></i> <span>View Participation Proof</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="icpc-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/icpc.jpeg" alt="ICPC Participation Proof" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- কার্ড 5 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">Analytical Skill Development Seminar</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-teal-500/10 text-teal-400 rounded-full shrink-0 font-mono">July 2025</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Core Analytics | Professional Camp</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                            Attended the specialized analytics camp led by legendary Professor Dr. M. Kaykobad Sir to scale logic creation matrices and engineering design workflows.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('seminar-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View Seminar Certificate</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="seminar-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/analytical.jpeg" alt="Analytical Seminar Certificate" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- কার্ড 6 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">IUPC 2024 Participation</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-rose-500/10 text-rose-400 rounded-full shrink-0 font-mono">UU Computer Programming Club</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Intra University Programming Contest</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                            An Intra University Programming Contest was arranged in Uttara University under Uttara
+                            University Programming Club on 16 May 2024. I along with my team (Metaphorical 3.O) was
+                            participated in it as vice team leader and placed 14th out of 42 teams.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('iupc2024-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View Participation Certificate</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="iupc2024-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/iupc1.png" alt="Participation Certificate" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- কার্ড 7 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">CyberCon 2024 Participation</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-rose-500/10 text-rose-400 rounded-full shrink-0 font-mono">UU Cyber Club</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Cyber Security | Industrial Exploration</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                            Successfully joined the industrial tech framework exploration and protective labs track arranged by Cyber Security Club, Uttara University.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('cybercon-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View CyberCon Certificate</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="cybercon-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/cybercon.png" alt="CyberCon 2024 Certificate" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- কার্ড 8 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">International Essay Contest for Young People</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-blue-500/10 text-blue-400 rounded-full shrink-0 font-mono">2017</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">The GOI Peace Foundation, Tokyo, Japan</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                             Participated in the <strong>International Essay Contest for Young People 2017</strong>, organized by <strong>The Goi Peace Foundation, Tokyo, Japan</strong>. 
+                             The competition encouraged young participants 
+                             worldwide to express their ideas on global peace, social responsibility, and sustainable development 
+                             through creative essay writing. Received a <strong>Participation Certificate</strong> in recognition of my contribution.
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('essay17-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View Participation Certificate</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="essay17-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/essay2017.png" alt="Participation Certificate" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 9 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">
+                                8th Joypurhat District Camp
+                            </h3>
+
+                            <span class="px-2 py-0.5 text-[10px] bg-blue-500/10 text-blue-400 rounded-full shrink-0 font-mono">
+                                2017
+                            </span>
+                        </div>
+
+                        <p class="text-xs text-slate-500 mt-1">
+                            Bangladesh Scouts
+                        </p>
+
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                            Participated in the <strong>8th Joypurhat District Camp 2017</strong>,
+                            organized by <strong>Bangladesh Scouts</strong>. The camp focused on
+                            leadership development, teamwork, discipline, community service,
+                            outdoor survival, and scouting activities. Received a
+                            <strong>Participation Certificate</strong> in recognition of active
+                            participation.
+                        </p>
+                    </div>
+
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button
+                            onclick="toggleCert('camp2-drop', this)"
+                            class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>View Participation Certificate</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- Certificate -->
+                    <div id="camp2-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img
+                                src="assets/scout2.png"
+                                alt="8th Joypurhat District Camp 2017 Certificate"
+                                class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- কার্ড 10 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">National Power & Energy Camp</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-blue-500/10 text-blue-400 rounded-full shrink-0 font-mono">2015</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Bangladesh Scouts, Ministry of Power & Mineral Resources</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                           Participated in the <strong>4th National Power & Energy Camp 2015</strong>, jointly organized by the
+                        <strong>Bangladesh Scouts</strong> and the <strong>Ministry of Power, Energy & Mineral Resources</strong>.
+                        The scouting camp provided practical knowledge of energy conservation, renewable energy, environmental awareness,
+                        leadership, teamwork, and outdoor skills. Received a <strong>Participation Certificate</strong> in recognition of active involvement.
+                    </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('camp1-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View Participation Certificate</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="camp1-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/scout1.png" alt="Scout Camp Certificate" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+
+                 <!-- কার্ড 11 -->
+                <div class="p-6 glass-card rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-base font-bold text-white">National Islamic Cultural Competition for Children & Youth</h3>
+                            <span class="px-2 py-0.5 text-[10px] bg-blue-500/10 text-blue-400 rounded-full shrink-0 font-mono">2014</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Islamic Foundation, Joypurhat District</p>
+                        <p class="mt-4 text-xs text-slate-400 leading-relaxed text-justify">
+                          Participated in the <strong>National Islamic Cultural Competition for Children & Youth 2014</strong>,
+                            organized by the <strong>Islamic Foundation, Joypurhat District</strong>.
+                            Demonstrated excellence in Islamic cultural activities and secured the
+                            <strong>3rd Position</strong>, earning a <strong>Credential Certificate</strong>
+                            in recognition of this achievement.
+                    </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-slate-900/60">
+                        <button onclick="toggleCert('essay2014-drop', this)" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-solid fa-certificate"></i> <span>View Credential</span> <i class="fa-solid fa-chevron-down text-[10px] arrow-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- অন-পেইজ ড্রপডাউন কন্টেইনার -->
+                    <div id="essay2014-drop" class="cert-dropdown w-full">
+                        <div class="p-2 bg-slate-950/80 border border-slate-800 rounded-lg shadow-inner">
+                            <img src="assets/essay2014.png" alt="3rd Position Certificate" class="w-full h-auto rounded object-contain max-h-80 mx-auto">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!--Projects-->
+
+    <section id="projects" class="py-24 bg-[#080c14] border-t border-slate-900">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Engineering & Web Projects</h2>
+                <p class="text-sm text-slate-400 mt-2">A compilation of running full-stack web products and automated software tools.</p>
+            </div>
+            
+            <div class="mt-12 grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+              
+                <!--Project 1-->
+                
+                <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                    <div class="p-5 flex-1">
+                        <span class="text-[10px] font-mono text-blue-400 uppercase">Portfolio </span>
+                        <h3 class="text-lg font-bold text-white mt-1">Personal Profile </h3>
+                        <p class="mt-2 text-slate-400 text-xs leading-relaxed">A centralized academic portal designed to streamline batch routine management, dynamic notices, and student information architectures.</p>
+                    </div>
+                    <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                        <a href="https://tanzimulahsan.page.gd/" target="_blank" class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">Launch <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+                
+                
+                 <!--Project 2-->
+
+                 <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                    <div class="p-5 flex-1">
+                        <span class="text-[10px] font-mono text-purple-400 uppercase">Club Automation</span>
+                        <h3 class="text-lg font-bold text-white mt-1">Uttara University Blood Club Hub</h3>
+                        <p class="mt-2 text-slate-400 text-xs leading-relaxed">A centralized blood-donation network to streamline real-time donor verification, urgent blood requests, and club activity management.</p>
+                    </div>
+                    <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                        <a href="https://uubc.page.gd/?i=1" target="_blank" class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">Launch <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+
+                 <!--Project 3-->
+
+                <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                    <div class="p-5 flex-1">
+                        <span class="text-[10px] font-mono text-emerald-400 uppercase">E-Governance</span>
+                        <h3 class="text-lg font-bold text-white mt-1">Secure E-Voting Platform</h3>
+                        <p class="mt-2 text-slate-400 text-xs leading-relaxed">Digital election structure deploying encrypted constraints and strict structural verification data nodes.</p>
+                    </div>
+                    <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                        <a href="https://e-voting.page.gd/" target="_blank" class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">Launch <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+
+                 <!--Project 4-->
+
+                    <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                        <div class="p-5 flex-1">
+                            <span class="text-[10px] font-mono text-amber-400 uppercase">Desktop Application (Java)</span>
+
+                            <h3 class="text-lg font-bold text-white mt-1">
+                                Group Chat Application
+                            </h3>
+
+                            <p class="mt-2 text-slate-400 text-xs leading-relaxed text-justify">
+                                A real-time desktop group chat application developed in Java using
+                                Socket Programming and multithreading. The application enables multiple
+                                users to communicate simultaneously through a client-server architecture,
+                                demonstrating concepts of networking, concurrency, and graphical user interface (GUI) development.
+                            </p>
+                        </div>
+
+                        <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                            <a href="https://github.com/Mrh-Script/Chat-Application-Project-Java"
+                                target="_blank"
+                                class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">
+                                Source Code
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <!--Project 5-->
+
+                    <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                        <div class="p-5 flex-1">
+                            <span class="text-[10px] font-mono text-amber-400 uppercase">Desktop Application (Java)</span>
+
+                            <h3 class="text-lg font-bold text-white mt-1">
+                                Personal Library Management
+                            </h3>
+
+                            <p class="mt-2 text-slate-400 text-xs leading-relaxed text-justify">
+                                 Personal Book Library is a Java Swing application to manage books by sections like Islamic, History, 
+                                 and Others. It supports adding, giving, returning, removing books, and viewing lists with serial numbers. 
+                                 Data is saved automatically for persistence. Simple, colorful, and easy to use.
+                            </p>
+                        </div>
+
+                        <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                            <a href="https://github.com/Mrh-Script/Personal-Library-Project-Java"
+                                target="_blank"
+                                class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">
+                                Source Code
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <!--Project 6-->
+
+                    <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                        <div class="p-5 flex-1">
+                            <span class="text-[10px] font-mono text-amber-400 uppercase">Desktop Application (Java)</span>
+
+                            <h3 class="text-lg font-bold text-white mt-1">
+                                Tic-Tac-Toe Game
+                            </h3>
+
+                            <p class="mt-2 text-slate-400 text-xs leading-relaxed text-justify">
+                                 This is a simple 2-player Tic-Tac-Toe game built using Java Swing GUI. Players take turns to mark X or O 
+                                 in a 3x3 grid. The first player to get three in a row wins. The game also detects ties and includes a 
+                                 restart option.
+                            </p>
+                        </div>
+
+                        <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                            <a href="https://github.com/Mrh-Script/TicTacToe-Game-Project-Java"
+                                target="_blank"
+                                class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">
+                                Source Code
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                     <!--Project 7-->
+
+                    <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                        <div class="p-5 flex-1">
+                            <span class="text-[10px] font-mono text-amber-400 uppercase">Desktop Application (Java)</span>
+
+                            <h3 class="text-lg font-bold text-white mt-1">
+                                Simple Notepad
+                            </h3>
+
+                            <p class="mt-2 text-slate-400 text-xs leading-relaxed text-justify">
+                                A simple and clean Notepad app made with Java Swing. Supports basic text editing, file open/save, and undo/redo features.
+                            </p>
+                        </div>
+
+                        <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                            <a href="https://github.com/Mrh-Script/NotePad-Project-Java"
+                                target="_blank"
+                                class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">
+                                Source Code
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                     <!--Project 8-->
+
+                    <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                        <div class="p-5 flex-1">
+                            <span class="text-[10px] font-mono text-amber-400 uppercase">Desktop Application (Java)</span>
+
+                            <h3 class="text-lg font-bold text-white mt-1">
+                                Basic Calculator
+                            </h3>
+
+                            <p class="mt-2 text-slate-400 text-xs leading-relaxed text-justify">
+                                 This is a basic Calculator built using Java Swing GUI. It supports simple arithmetic
+                                  operations like addition, subtraction, multiplication, and division. The user interface is clean, colorful, and easy to use.The first 
+                                  player to get three in a row wins. The game also detects ties and includes a 
+                                 restart option.
+                            </p>
+                        </div>
+
+                        <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                            <a href="https://github.com/Mrh-Script/Basic-Calculator-Project-Java"
+                                target="_blank"
+                                class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">
+                                Source Code
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                     <!--Project 9-->
+
+                    <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                        <div class="p-5 flex-1">
+                            <span class="text-[10px] font-mono text-amber-400 uppercase">Desktop Application (Java)</span>
+
+                            <h3 class="text-lg font-bold text-white mt-1">
+                                Counting Machine
+                            </h3>
+
+                            <p class="mt-2 text-slate-400 text-xs leading-relaxed text-justify">
+                                 A simple Counter Machine built with Java Swing. It allows users to increment, decrement, and 
+                                 reset a counter value. The application has an intuitive interface with easy-to-use buttons and keyboard 
+                                 shortcuts for quick actions.
+                            </p>
+                        </div>
+
+                        <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                            <a href="https://github.com/Mrh-Script/Counter-Machine-Project-Java"
+                                target="_blank"
+                                class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">
+                                Source Code
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                     <!--Project 10-->
+
+                    <div class="flex flex-col glass-card rounded-xl overflow-hidden shadow-md">
+                        <div class="p-5 flex-1">
+                           <span class="text-[10px] font-mono uppercase text-red-400">Desktop Application (C#)</span>
+
+                            <h3 class="text-lg font-bold text-white mt-1">
+                                Atomic Dictionary
+                            </h3>
+
+                            <p class="mt-2 text-slate-400 text-xs leading-relaxed text-justify">
+                                 A simple Windows Forms app that shows detailed information about chemical elements when you enter their
+                                 name or symbol. 
+                            </p>
+                        </div>
+
+                        <div class="px-5 py-3 bg-[#0b0f19]/40 border-t border-slate-900/80 flex justify-end">
+                            <a href="https://github.com/Mrh-Script/Atomic-Dictionary-Project-C-Sharp"
+                                target="_blank"
+                                class="text-xs font-medium text-blue-400 hover:underline inline-flex items-center gap-1">
+                                Source Code
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- YouTube Channel -->
+
+<section id="youtube" class="py-24 bg-[#080c14] border-t border-slate-900">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Heading -->
+        <div class="text-center">
+            <span class="px-2.5 py-1 text-xs font-semibold text-red-400 bg-red-500/10 rounded-full border border-red-500/20">
+                Educational Content
+            </span>
+
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-3">
+                YouTube Channel
+            </h2>
+        </div>
+
+        <!-- Channel Card -->
+        <div class="mt-12 p-6 sm:p-8 glass-card rounded-2xl shadow-2xl flex flex-col md:flex-row gap-8 items-center">
+
+            <!-- Left Side -->
+            <div class="w-full md:w-2/5">
+                <div class="w-full flex justify-center">
+                    <img src="assets/yt.png"
+                        alt="YouTube Channel"
+                        class="w-56 rounded-xl border border-slate-800 shadow-xl hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex-1 w-full">
+
+                <span class="px-2.5 py-1 text-xs font-semibold text-red-400 bg-red-500/10 rounded-full border border-red-500/20">
+                    YouTube
+                </span>
+
+                <h3 class="text-xl font-bold text-white mt-4">
+                    BriefClips with Riad
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Created & Managed by
+                    <strong>Md. Riad Hasan</strong>
+                </p>
+
+                <p class="mt-4 text-sm text-slate-400 leading-relaxed text-justify">
+                    This channel shares educational videos on Computer Science,
+                    programming, university coursework and productivity. The goal is to make learning simple,
+                    practical, and accessible for students.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-4">
+
+                    <a href="https://www.youtube.com/@BriefClips-Mrh"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-500 text-xs font-semibold rounded-md transition-colors">
+
+                        <i class="fa-brands fa-youtube"></i>
+                        Visit Channel
+                    </a>
+
+                    <a href="https://www.youtube.com/@BriefClips-Mrh?sub_confirmation=1"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs text-slate-300 font-semibold rounded-md transition-colors">
+
+                        <i class="fa-solid fa-bell"></i>
+                        Subscribe
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section id="contact" class="py-24 border-t border-slate-900 bg-[#0b0f19]">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-white tracking-tight">Let's Connect</h2>
+        <br>
+        <br>
+        
+        <!-- ১-২ লাইনে সাজানো গোল প্রফেশনাল আইকনস সমূহ -->
+        <div class="flex flex-wrap justify-center gap-5 max-w-2xl mx-auto">
+            
+            <!-- WhatsApp -->
+            <a href="https://wa.me/8801717088375" target="_blank" title="WhatsApp" 
+               class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-xl text-slate-400 hover:text-emerald-400 hover:border-emerald-500/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Mrh-Script" target="_blank" title="GitHub" 
+               class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-xl text-slate-400 hover:text-white hover:border-slate-700 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/404mrh" target="_blank" title="LinkedIn" 
+               class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-xl text-slate-400 hover:text-blue-400 hover:border-blue-500/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <!-- Academic Mail -->
+            <a href="mailto:riad.hasan@uttarauniversity.edu.bd" title="Academic Mail" 
+               class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-xl text-slate-400 hover:text-sky-400 hover:border-sky-500/30 hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <!-- Personal Mail -->
+            <a href="mailto:mdriadhasan2003@gmail.com" title="Personal Mail" 
+               class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-xl text-slate-400 hover:text-indigo-400 hover:border-indigo-500/30 hover:shadow-[0_0_20px_rgba(99,102,241,0.2)]">
+                <i class="fa-solid fa-envelope-open"></i>
+            </a>
+
+            <!-- X (Twitter) -->
+            <!-- শুধুমাত্র এই অংশটুকু আগের X (Twitter) এর জায়গায় রিপ্লেস করুন -->
+<a href="https://x.com/mrh_script" target="_blank" title="X (Twitter)" 
+   class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-slate-400 hover:text-slate-200 hover:border-slate-800 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)] transition-all">
+    <!-- SVG ব্যবহার করা হলো যাতে ফন্ট অসামের ভার্সন সমস্যার কারণে লোগো মিসিং না হয় -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 16 16">
+        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+    </svg>
+</a>
+            <!-- Facebook -->
+            <a href="https://facebook.com/mrh.cse" target="_blank" title="Facebook" 
+               class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-xl text-slate-400 hover:text-blue-500 hover:border-blue-600/30 hover:shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+    <footer class="bg-[#080c14] py-8 border-t border-slate-900 text-center text-xs text-slate-600">
+        <p>&copy; 2026 Md. Riad Hasan. Built with extreme professional standards.</p>
+    </footer>
+
+    <!-- ড্রপডাউন ও অ্যারো অ্যানিমেশন ট্র্যাকিং জাভাস্ক্রিপ্ট -->
+    <script>
+        function toggleCert(id, btnElement) {
+            const dropdown = document.getElementById(id);
+            const arrow = btnElement.querySelector('.arrow-icon');
+            const isCurrentlyOpen = dropdown.classList.contains('open');
+
+            if (!isCurrentlyOpen) {
+                dropdown.classList.add('open');
+                if (arrow) {
+                    arrow.style.transform = 'rotate(180deg)';
+                    arrow.style.color = '#3b82f6';
+                }
+            } else {
+                dropdown.classList.remove('open');
+                if (arrow) {
+                    arrow.style.transform = 'rotate(0deg)';
+                    arrow.style.color = '';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
